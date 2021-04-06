@@ -1,7 +1,3 @@
-# Luis Sandro González Solalinde
-# A01365445
-# Lenguajes y Traductores
-# Entrega 3
 import ply.yacc as yacc
 import ply.lex as lex
 import re
