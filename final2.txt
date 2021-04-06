@@ -1,0 +1,40 @@
+prog vector:
+
+dim vector as word (10);
+dim size,aux,op, aux2 as word;
+
+main
+while (op <2)
+	while(size>10 or size=0)
+		in "size of vector" size;
+	wend;
+	let size = size -1;
+	for i=0 to size step 1
+		in "ingrese el valor %i del vector" aux;
+		let vector(i) = aux+0;
+	next;
+	gosub ordenar:;
+	out "Vector ordenado";
+	for i = 0 to size step 1
+		out "%vector(i)";
+	next;
+	out "Desea ordenar otro vector?";
+	let size =0;
+	in "1 para si, 2 para salir" op;
+wend;
+endmain
+
+sub ordenar:
+for i=0 to size step 1
+	let aux = vector (i)+0;
+	for j =i to size step 1
+		if vector(j)<vector(i) then
+			let aux2 = vector (i)+0;
+			let vector(i) = vector(j)+0;
+			let vector(j) = aux2+0;
+		endif;
+	next;
+next;
+ret
+
+fin

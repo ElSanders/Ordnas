@@ -1,0 +1,32 @@
+prog prueba:
+dim x as float;
+dim y as word ( 1 , 1 , 1);
+main 
+if x>2 then 
+	let x = x - 1;
+else
+	let x = x + 1;
+endif;
+
+if x<3 then
+let y = x + 2;
+endif;
+
+if x>1 then
+	let p = z + d;
+elsif if x>2 then
+	let p = z + f;
+else
+	let p = x + f;
+endif;
+
+if x>4 then
+	let a = a + 1;
+	if x<8 then
+		let b = b + 1;
+	endif;
+endif;
+
+endmain
+
+fin

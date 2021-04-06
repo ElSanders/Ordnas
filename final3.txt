@@ -1,0 +1,60 @@
+prog rescursive:
+dim x,y,aux as float;
+dim op as word;
+main
+while op<4 
+	in "ingrese x" x;
+	in "ingrese y" y;
+	out "1) x factorial";
+	out "2) x^y";
+	out "3) x+y porciento";
+	out "4) salir";
+	in "opcion" op;
+	if op = 1 then
+		let y = 1;
+		gosub factorial:;
+		out "Siguiente";
+	endif;
+	if op = 2 then
+		let aux = 1/1;
+		gosub exponente:;
+		out "Siguiente";
+	endif;
+	if op = 3 then
+		gosub porciento:;
+		out "Siguiente";
+	endif;
+wend;
+endmain
+
+sub factorial:
+	if x>1 then
+		#out "x %x y %y ";
+		let y = y*x;
+		let x = x-1;
+		gosub factorial:;
+	endif;
+	out "resultado %y ";
+ret
+
+
+sub exponente:
+	if y>0 then
+		let aux = aux*x;
+		let y = y-1;
+		gosub exponente:;
+	endif;
+	out "resultado %aux";
+ret
+
+sub porciento:
+	let aux = x*y;
+	#out "%aux";
+	let aux = aux /100;
+	#out "%aux";
+	let x = x+aux;
+	out "resultado %x";
+ret
+
+
+fin

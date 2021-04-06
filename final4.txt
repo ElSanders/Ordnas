@@ -1,0 +1,49 @@
+prog prueba:
+dim p as word(2,2,2);
+dim x as word(2,2,2);
+dim res as word(2,2,2);
+main 
+for i = 0 to 1 step 1
+for k = 0 to 1 step 1
+for j = 0 to 1 step 1
+let p(i,k,j) =j+k;
+next;
+next;
+next;
+out "Primer cubo";
+out "%p";
+let p(0,0,0) = 2;
+out "Primer cubo con valor modificado";
+out "%p";
+
+for i = 0 to 1 step 1
+for k = 0 to 1 step 1
+for j = 0 to 1 step 1
+let x(i,k,j) =i+k;
+next;
+next;
+next;
+
+out "Segundo cubo";
+out "%x";
+
+for i = 0 to 1 step 1
+for k = 0 to 1 step 1
+for j = 0 to 1 step 1
+let res(i,k,j) =p(i,k,j)+x(i,k,j);
+next;
+next;
+next;
+
+out "Suma de primeros dos cubos";
+out"%res";
+out "Dimension x del cubo";
+out"%res(0)";
+out "Dimension x,y del cubo";
+out"%res(0,0)";
+out "Dimension x,y,z del cubo";
+out"%res(0,0,0)";
+
+endmain 
+
+fin

@@ -1,0 +1,44 @@
+prog zeros:
+
+dim input as word;
+dim x,y,n,e,aux,x2,x1,x0 as float;
+
+main
+let input = 1;
+while(input = 1)
+in"ingrese el valor de x2" x2;
+in"ingrese el valor de x1" x1;
+in"ingrese el valor de x0" x0;
+let n = x1+0;
+let x = x1 * n;
+let n = 4*x0;
+let n = n * x2;
+let x = x - n;
+let n = x+0;
+let y = 1;
+while(x>y)
+let x = x+y;
+let x = x/2;
+let y = n / x ;
+wend;
+
+let e = 2 * x2;
+if(x1 = x0) then
+let y = 0-x1;
+let aux = y-x;
+else
+let x = 0-x1;
+let aux = x-y;
+endif;
+
+
+
+let aux = aux/e;
+out "raiz 1 = %aux";
+let aux = y+x;
+let aux = aux/e;
+out "raiz 2 = %aux";
+in"si desea continuar presione 1, si no 0" input;
+wend;
+endmain
+fin

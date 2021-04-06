@@ -1,0 +1,38 @@
+prog Matrices:
+dim mat1 as float(10,10); # arreglo de 10x10
+dim mat2 as float(10,10);
+dim X1,X2,Y1,Y2 as float;
+
+main
+while (X1=X2 and Y1=Y2 and X1<10 and X2<10 and Y1<10 and Y2<10) or x<5
+gosub dimensiones:;
+wend;
+gosub Leer:;
+gosub Add:;
+gosub Print:;
+endmain
+
+sub dimensiones:
+in "Escriba las dimension x de la primera matriz" X1;
+in "Escriba las dimension x de la segunda matriz" X2;
+in "Escriba las dimension y de la primera matriz" Y1;
+in "Escriba las dimension y de la segunda matriz" Y2; 
+ret
+
+sub Leer:
+for i=1 to X1 step 1
+for j=1 to Y1 step 1
+in "Escriba el valor de %i %j de la primera matriz" mat1(i,j);
+next;
+next;
+ret
+
+sub Add:
+for i=1 to X1 step 1
+for j=1 to Y1 step 1
+let mat(i,j) = mat(i,j)+mat2(i,j);
+out "%mat1(i,j)";
+next;
+next;
+ret
+fin

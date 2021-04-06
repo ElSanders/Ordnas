@@ -1,0 +1,61 @@
+prog digitos:
+dim number as word;
+dim size as word;
+dim aux as word;
+dim power as word;
+dim i as word;
+dim aux2 as word;
+
+main 
+in "Please input the amount of digits of the number "size;
+in "Please input your number " number;
+
+let size = size - 1;
+let power = 1;
+
+for i = 0 to size step 1
+for j = 1 to i step 1
+let power = power * 10;
+next;
+
+let aux = number / power;
+let aux2 = aux / 10;
+let aux2 = aux2 *10;
+let aux = aux-aux2;
+
+if aux = 1 then
+out "Uno";
+endif;
+if aux = 2 then
+out "Dos";
+endif;
+if aux = 3 then
+out "Tres";
+endif;
+if aux = 4 then
+out "Cuatro";
+endif;
+if aux = 5 then
+out "Cinco";
+endif;
+if aux = 6 then
+out "Seis";
+endif;
+if aux = 7 then
+out "Siete";
+endif;
+if aux = 8 then
+out "Ocho";
+endif;
+if aux = 9 then
+out "Nueve";
+endif;
+if aux = 0 then
+out "Cero";
+endif;
+
+
+let power = 1;
+next;
+endmain
+fin

@@ -1,0 +1,30 @@
+prog prueba:
+dim x as float;
+dim z as float;
+dim y as float;
+dim i as float;
+
+main 
+
+let z = 0;
+
+while x>y
+let z = z + 1;
+wend;
+
+do (while x>1)
+let x = x - 1;
+loop;
+
+do(until x=1)
+let x = x + 1;
+loop;
+
+for i = 1 to 5 step 1
+let x = x + i;
+let y = y + i;
+next;
+
+endmain
+
+fin

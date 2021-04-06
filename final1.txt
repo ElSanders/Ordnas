@@ -1,0 +1,93 @@
+prog prueba:
+dim x as word(5,5);
+dim y as word(5,5);
+dim res as word(5,5);
+dim dimx1,dimx2,dimy1,dimy2,op,input,aux1,aux2 as word;
+main 
+
+while(dimx1>5 or dimx1=0)
+	in "Ingrese la dimension x de la primera matrix" dimx1;
+wend;
+
+while(dimy1>5 or dimy1=0)
+	in "Ingrese la dimension y de la primera matrix" dimy1;
+wend;
+
+while(dimx2>5 or dimx2=0)
+	in "Ingrese la dimension x de la segunda matrix" dimx2;
+wend;
+
+while(dimy2>5 or dimy2=0)
+	in "Ingrese la dimension y de la segunda matrix" dimy2;
+wend;
+
+let dimx1 = dimx1 -1;
+let dimx2 = dimx2 -1;
+let dimy1 = dimy1 -1;
+let dimy2 = dimy2 -1;
+
+gosub llenar:;
+
+while(op<3)
+	out "opciones"; 
+	out "1 multiplicar matrices";
+	out "2 sumar matrices";
+	out "3 salir";
+	in "Su opcion:" op;
+	if(op = 1) then
+	if(dimx1=dimy2) then
+	for j=0 to dimx1 step 1
+		for i=0 to dimx1 step 1
+			for k=0 to dimx1 step 1 
+				let aux1 = x(j,k) * y(k,i);
+				let res(j,i)= res(j,i)+ aux1;
+			next;
+		next;
+	next;
+
+	for n=0 to dimy1 step 1
+		out"%res(n)";
+	next;
+	else
+		out "No se pueden multiplicar por error de dimensiones";
+	endif;
+
+	else
+	if(dimx1 = dimx2 and dimy1 = dimy2) then
+	for i = 0 to dimx1 step 1
+		for j = 0 to dimy1 step 1
+			let aux1 = x(i,j) + y(i,j);
+			let res(i,j) = aux1+0;
+		next;
+	next;
+
+	for i=0 to dimx1 step 1
+		out"%res(i)";
+	next;
+else
+out "No se pueden sumar por error de dimensiones";
+endif;
+
+endif;
+wend;
+
+
+endmain 
+
+sub llenar:
+for j=0 to dimx1 step 1
+	for i=0 to dimy1 step 1
+		in "llene el valor de x %j, %i" input;
+		let x(j,i)=input+0;
+	next;
+next;
+for j=0 to dimx2 step 1
+	for i=0 to dimy2 step 1
+		in "llene el valor de y %j, %i" input;
+		let y(j,i)=input+0;
+	next;
+next;
+ret
+
+
+fin
